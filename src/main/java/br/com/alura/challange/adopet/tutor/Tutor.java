@@ -31,4 +31,19 @@ public class Tutor {
 		this.email = dados.email();
 		this.senha = dados.senha();
 	}
+
+	public Long getId() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public String getNome() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public String getEmail() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
