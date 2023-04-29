@@ -24,6 +24,10 @@ public class Tutor {
 	private String nome;
 	private String email;
 	private String senha;
+	
+	public Tutor() {
+		
+	}
 
 	public Tutor(DadosCadastroTutor dados) {
 		this.nome = dados.nome();
