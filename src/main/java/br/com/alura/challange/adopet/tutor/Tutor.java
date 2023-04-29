@@ -5,7 +5,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import jakarta.validation.Valid;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,12 +12,12 @@ import lombok.ToString;
 
 @Getter
 @EqualsAndHashCode(of = "Id")
-@ToString(of = {"id", "nome", "email"})
+@ToString(of = { "id", "nome", "email" })
 @Entity
 @NoArgsConstructor
 @Table(name = "tutores")
 public class Tutor {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
@@ -26,24 +25,10 @@ public class Tutor {
 	private String email;
 	private String senha;
 
-	public Tutor(@Valid DadosCadastroTutor dados) {
+	public Tutor(DadosCadastroTutor dados) {
 		this.nome = dados.nome();
 		this.email = dados.email();
 		this.senha = dados.senha();
 	}
 
-	public Long getId() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public String getNome() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	public String getEmail() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 }

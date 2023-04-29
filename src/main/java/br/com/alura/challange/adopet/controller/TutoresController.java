@@ -1,6 +1,6 @@
 package br.com.alura.challange.adopet.controller;
 
-import java.util.stream.Collectors;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.alura.challange.adopet.tutor.DadosCadastroTutor;
-import br.com.alura.challange.adopet.tutor.DadosDetalhesTutor;
 import br.com.alura.challange.adopet.tutor.Tutor;
 import br.com.alura.challange.adopet.tutor.TutorRepository;
 import jakarta.validation.Valid;
@@ -36,13 +35,11 @@ public class TutoresController {
 
 	}
 
-	/*
-	 * @GetMapping public ResponseEntity<String> listar(){ var tutores =
-	 * repository.findAll();
-	 * 
-	 * return
-	 * ResponseEntity.ok(tutores.stream().map(DadosDetalhesTutor::new).collect).
-	 * Collectors.toList(); }
-	 */
+	@GetMapping
+	public ResponseEntity<List<Tutor>> listar() {
+		List<Tutor> tutores = repository.findAll();
+
+		return ResponseEntity.ok(tutores);
+	}
 
 }

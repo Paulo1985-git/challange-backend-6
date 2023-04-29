@@ -5,7 +5,7 @@ import jakarta.validation.constraints.NotBlank;
 
 public record DadosCadastroTutor(
 		@NotBlank String nome,
-		@Email @NotBlank String email, 
+		@NotBlank @Email String email, 
 		@NotBlank String senha, 
 		@NotBlank String confirmacaoSenha) {
 
